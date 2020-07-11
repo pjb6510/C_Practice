@@ -97,10 +97,29 @@ int main()
 	int count = 0;
 	while (search != NULL)
 	{
-		if (strcmp(search->title, "Aladin") == 0) break;
+		if (strcmp(search->title, "Aladin") == 0) break; //알라딘 검색.
 
 		prev = search;
 		search = search->next;
 		count++;
 	}
-}
+
+	//헤드 -> 삭제할 노드 -> 다음노드...
+	//헤드 -> 다음노드... 로 변경.
+	//삭제할 노드를 free
+
+	if (search == NULL) //못찾으면 검색내용이 잘못된것.
+	{
+		printf("Wrong title\n");
+		return;
+	}
+	if (prev == NULL) //첫 값(head)이 검색한 값이면[이전값(prev)가 null이면 삭제할 값이 첫값이니까.] head완장을 두 번째 값에게 넘겨줌. (검색한 값은 삭제되어야 하니까)
+		head = search->next;
+	else // 첫 값이 검색한 값이 아니면, 삭제할 값의 이전값(prev)에 삭제할 값의 다음값(next) 주소를 연결해줌.
+		prev->next = search->next;
+	free(search); //삭제.
+	
+	print_all(head);
+
+	return 0;
+}	
