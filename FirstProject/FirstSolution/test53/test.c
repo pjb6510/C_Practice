@@ -13,7 +13,7 @@ struct movie {
 
 typedef struct movie* p_movie;
 
-void print_all(struct movie* head)
+void print_all_items(struct movie* head)
 {
 	printf("----------------\n");
 	printf("Head address = %zd\n", (size_t)head);
@@ -44,7 +44,7 @@ int main()
 	if (head == NULL)
 		head = new_node;
 
-	print_all(head);
+	print_all_items(head);
 
 	/* second node */
 	new_node = malloc(sizeof(struct movie));
@@ -62,7 +62,7 @@ int main()
 	head = new_node;
 	new_node->next = temp;
 
-	print_all(head);
+	print_all_items(head);
 
 	/* third node */
 	new_node = malloc(sizeof(struct movie));
@@ -87,7 +87,7 @@ int main()
 	// 2. link
 	search->next = new_node;
 
-	print_all(head);
+	print_all_items(head);
 
 	/* Find and delete an item */
 
@@ -119,7 +119,7 @@ int main()
 		prev->next = search->next;
 	free(search); //삭제.
 	
-	print_all(head);
+	print_all_items(head);
 
 	return 0;
 }	
