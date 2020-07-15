@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.c">
+    <ClCompile Include="practice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Best_Answer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
