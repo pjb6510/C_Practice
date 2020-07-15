@@ -366,7 +366,7 @@ void delete_an_item(int* n, p_movie* head)
 		temp = temp->next;
 	}
 
-	*n--;
+	*n -= 1;
 }
 
 void delete_all_items(int* n, p_movie* head)
