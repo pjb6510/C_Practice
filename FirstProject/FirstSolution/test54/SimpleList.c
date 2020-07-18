@@ -4,11 +4,43 @@
 //node = {item, next}
 //list = {head, size}
 
+void InitializeList(List* plist)
+{
+	plist->head = NULL;
+}
+
+bool IsEmpty(const List* plist)
+{
+	if (plist->head == NULL)
+		return true;
+	else
+		return false;
+}
+
+bool IsFull(const List* plist)
+{
+	Node* pt;
+	bool full = false;
+
+	pt = (Node*)malloc(sizeof(Node));
+	if (pt == NULL)
+		full = true;
+	
+	free(pt);
+
+	return full;
+}
+
 bool AddItem(Item item, List* plist)
 {
 	Node* pnode = plist->head;
 
 	Node* new_node = (Node*)malloc(sizeof(Node));
+	if (new_node == NULL)
+	{
+		printf("malloc error.\n");
+		return false;
+	}
 	new_node->item = item;
 	new_node->next = NULL;
 
@@ -22,20 +54,35 @@ bool AddItem(Item item, List* plist)
 		pnode->next = new_node;
 	}
 	plist->size += 1;
+	return true;
 }
 
 void InsertByIndex(Item item, List* plist, int index)
 {
 	Node* pnode = plist->head;
+	Node* prev = NULL;
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	if (new_node == NULL)
+	{
+		printf("malloc error.\n");
+		return;
+	}
 
-	unsigned int i = 0;
+	int i = 0;
 	while (pnode != NULL)
 	{
 		if (i == index)
 		{
-			pnode->item = item;
-		}
+			if (i == 0)
+				plist->head = new_node;
+			else
+				prev->next = new_node;
 
+			new_node->item = item;
+			new_node->next = pnode;
+			break;
+		}
+		prev = pnode;
 		pnode = pnode->next;
 		i += 1;
 	}
@@ -43,20 +90,46 @@ void InsertByIndex(Item item, List* plist, int index)
 
 void RemoveByIndex(List* plist, int index)
 {
-	unsigned int i = 0;
+	int i = 0;
 	Node* pnode = plist->head;
 	Node* prev = NULL;
 	while (pnode != NULL)
 	{
 		if (index == i)
 		{
-			prev->next = pnode->next;
+			if (i == 0)
+				plist->head = pnode->next;
+			else
+				prev->next = pnode->next;
+
 			free(pnode);
+			break;
 		}
 		prev = pnode;
 		pnode = pnode->next;
 		i++;
 	}
+}
+
+bool Find(const List* plist, Item item_tofind, int* index, Item* item_found, bool (*compare_func)(Item a, Item b))
+{
+	bool is_found = false;
+	Node* pnode = plist->head;
+	int count = 0;
+	
+	while (pnode != NULL)
+	{
+		if ((*compare_func)(item_tofind, pnode->item) == true)
+		{
+			*item_found = pnode->item;
+			*index = count;
+			is_found = true;
+			break;
+		}
+		pnode = pnode->next;
+		count++;
+	}
+	return is_found;
 }
 
 unsigned int CountItems(const List* plist)

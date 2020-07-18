@@ -136,7 +136,7 @@ int input_menu()
 
 void print_an_item(Item item)
 {
-	printf("\%s\", %.1f\n", item.title, item.rating);
+	printf("\"%s\", %.1f\n", item.title, item.rating);
 }
 
 void print_all(const List* plist)
@@ -266,44 +266,37 @@ bool compare_items(Item a, Item b)
 		return false;
 }
 
-// ------------------------------------------------------------ //
-// 여기까지 함. // 영상 19:37
-
 void search_by_name(const List* plist)
 {
 	printf("Input title to search and press enter.\n");
 	printf(">> ");
 
-	char title[TSIZE] = { 0, };
-	if (scanf("%[^\n]%*c", title) != 1)
+	Item item_to_find;
+	if (scanf("%[^\n]%*c", item_to_find.title) != 1)
 	{
 		printf("Wrong input.\n");
 		return;
 	}
 
-	p_movie pnode = head;
+	Item item_found;
+	int index;	
 
-	int count = 0;
-	while (pnode != NULL)
+	if (Find(plist, item_to_find, &index, &item_found, compare_items) == true)
 	{
-		if (strcmp(pnode->title, title) == 0) break;
-		pnode = pnode->next;
-		count++;
-	}
-
-	if (pnode == NULL)
-	{
-		printf("No movie found : %s\n", title);
+		printf("%d : \"%s\", %.1f\n", index, item_found.title, item_found.rating);
 		return;
 	}
-
-	printf("%d : \"%s\", %.1f\n", count, pnode->title, pnode->rating);
+	else
+		printf("No movie found : %s\n", item_to_find.title);
 }
 
 int main()
 {
-	p_movie head = NULL;
-	read_file(&head);
+	List movie_list;
+
+	InitializeList(&movie_list);
+
+	read_file(&movie_list);
 
 	while (1)
 	{
@@ -313,36 +306,38 @@ int main()
 		switch (s)
 		{
 		case 1:
-			print_all(head);
+			print_all(&movie_list);
 			break;
 		case 2:
-			find_and_print_an_item(head);
+			find_and_print_an_item(&movie_list);
 			break;
 		case 3:
-			edit_an_item(head);
+			edit_an_item(&movie_list);
 			break;
 		case 4:
-			add_an_item(&head);
+			add_an_item(&movie_list);
 			break;
 		case 5:
-			insert_an_item(&head);
+			insert_an_item(&movie_list);
 			break;
 		case 6:
-			delete_an_item(&head);
+			delete_an_item(&movie_list);
 			break;
 		case 7:
-			delete_all_items(&head);
+			delete_all_items(&movie_list);
 			break;
 		case 8:
-			write_file(head);
+			write_file(&movie_list);
 			break;
 		case 9:
-			search_by_name(head);
+			search_by_name(&movie_list);
 			break;
 		case 10:
 			printf("Good bye\n");
-			delete_all_items(&head);
+			delete_all_items(&movie_list);
 			return 0;
+		default :
+			printf("%d is not implemented.\n", s);
 		}
 	}
 }
