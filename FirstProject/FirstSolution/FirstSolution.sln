@@ -121,6 +121,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "58. MoviesRating(Linked_lis
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "59. Interface(list)", "test54\test54.vcxproj", "{70C33829-9255-410A-8537-2C36E0B380C9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "60. Interface(list) reuse", "test60\test60.vcxproj", "{FB7D6128-DD5D-4CD6-9D93-E24033982877}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -601,6 +603,14 @@ Global
 		{70C33829-9255-410A-8537-2C36E0B380C9}.Release|x64.Build.0 = Release|x64
 		{70C33829-9255-410A-8537-2C36E0B380C9}.Release|x86.ActiveCfg = Release|Win32
 		{70C33829-9255-410A-8537-2C36E0B380C9}.Release|x86.Build.0 = Release|Win32
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Debug|x64.ActiveCfg = Debug|x64
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Debug|x64.Build.0 = Debug|x64
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Debug|x86.Build.0 = Debug|Win32
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Release|x64.ActiveCfg = Release|x64
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Release|x64.Build.0 = Release|x64
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Release|x86.ActiveCfg = Release|Win32
+		{FB7D6128-DD5D-4CD6-9D93-E24033982877}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
