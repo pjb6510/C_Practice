@@ -61,5 +61,18 @@ bool DeQueue(Item* pitem, Queue* pq)
 		return true;
 	}
 }
-void EmptyTheQueue(Queue* pq);
-void TraverseQueue(Queue* pq, void (*func)(Item item));
+void EmptyTheQueue(Queue* pq)
+{
+	pq->front = pq->rear;
+	pq->n_items = 0;
+}
+void TraverseQueue(Queue* pq, void (*func)(Item item))
+{
+	/*for (int num = 0, i = (pq->front+1) % MAXSIZE; num < pq->n_items; num++, i = (i + 1) % MAXSIZE)
+	{
+		(*func)(pq->items[i]);
+	}*/
+
+	for (int i = pq->front; i != pq->rear; i = (i + 1) % MAXSIZE)
+		(*func)(pq->items[(i + 1) % MAXSIZE]);
+}

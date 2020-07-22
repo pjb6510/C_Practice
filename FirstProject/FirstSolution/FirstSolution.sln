@@ -129,6 +129,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "62. FloodFill", "test62\tes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "63. Circular Queue", "Queue\Queue.vcxproj", "{DF055171-E53A-4AE1-A4D1-22C7018A2A8F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "64. Queue(LinkedList)", "64. Queue(LinkedList)\64. Queue(LinkedList).vcxproj", "{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -641,6 +643,14 @@ Global
 		{DF055171-E53A-4AE1-A4D1-22C7018A2A8F}.Release|x64.Build.0 = Release|x64
 		{DF055171-E53A-4AE1-A4D1-22C7018A2A8F}.Release|x86.ActiveCfg = Release|Win32
 		{DF055171-E53A-4AE1-A4D1-22C7018A2A8F}.Release|x86.Build.0 = Release|Win32
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Debug|x64.ActiveCfg = Debug|x64
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Debug|x64.Build.0 = Debug|x64
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Debug|x86.ActiveCfg = Debug|Win32
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Debug|x86.Build.0 = Debug|Win32
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Release|x64.ActiveCfg = Release|x64
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Release|x64.Build.0 = Release|x64
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Release|x86.ActiveCfg = Release|Win32
+		{EAF93F46-543B-4EF5-8E3F-1A7C21CDA103}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
