@@ -17,7 +17,26 @@ bool new_customer_visit(double x)
 		return false;
 }
 
+Item get_customer(long arrival_time)
+{
+	Item cust;
+
+	cust.processtime = rand() % 3 + 1; // 1 ~ 3 중 하나를 반환
+	cust.arrival_time = arrival_time;
+
+	return cust;
+}
+
 int main()
 {
+	Queue cust_queue;
+	int hours;
+	int n_cust;
 
+	printf("How many hours do you want to simulate?\n>> ");
+	scanf("%d%*c", &hours);
+	printf("How many customers per hour do you expect?\n>> ");
+	scanf("%d%*c", &n_cust);
+
+	
 }
