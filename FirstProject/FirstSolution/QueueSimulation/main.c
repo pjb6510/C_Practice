@@ -34,9 +34,17 @@ int main()
 	int n_cust;
 
 	printf("How many hours do you want to simulate?\n>> ");
-	scanf("%d%*c", &hours);
+	if(scanf("%d%*c", &hours) != 1)
+	{
+		printf("scanf error.\n");
+		exit(1);
+	}
 	printf("How many customers per hour do you expect?\n>> ");
-	scanf("%d%*c", &n_cust);
+	if (scanf("%d%*c", &n_cust) != 1)
+	{
+		printf("scanf error.\n");
+		exit(1);
+	}
 
 	
 }
