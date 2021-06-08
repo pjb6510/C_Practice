@@ -20,11 +20,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{bbbc1c20-8132-4e23-a4cc-de88d5921bdd}</ProjectGuid>
+    <ProjectGuid>{22269890-1a7b-4351-b9a7-d8ed0b3061cc}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>_50__QsortAndFuctionPointer</RootNamespace>
+    <RootNamespace>test33</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>50. QsortAndFuctionPointer</ProjectName>
+    <ProjectName>38. StructInFunctionPrac3</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
